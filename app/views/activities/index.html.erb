@@ -1,0 +1,10 @@
+<h1>Activities</h1>
+
+<p>
+<%= link_to 'New', new_activity_path %>
+<p>
+<% @activities.each do |activity| %>
+    <p><%= activity.activity_name %> </p>
+    <p><%= activity.date %></p>
+    <p><%= link_to 'Show', activity_path(activity) %></p>
+<% end %>
