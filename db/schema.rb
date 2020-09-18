@@ -16,8 +16,10 @@ ActiveRecord::Schema.define(version: 2020_09_16_134000) do
     t.text "activity_name"
     t.date "date"
     t.string "duration"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

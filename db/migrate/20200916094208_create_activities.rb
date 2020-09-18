@@ -4,8 +4,11 @@ class CreateActivities < ActiveRecord::Migration[6.0]
       t.text :activity_name
       t.date :date
       t.string :duration
-
+      t.references :user, index: true
+      
       t.timestamps
     end
   end
 end
+
+#20200916094208
