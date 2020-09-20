@@ -1,10 +1,24 @@
-<h1>Activities</h1>
+<div class="">
+    <h1 class="text-center">Activities</h1>
+</div>
+
 
 <p>
 <%= link_to 'New', new_activity_path %>
 <p>
-<% @activities.each do |activity| %>
-    <p><%= activity.activity_name %> </p>
-    <p><%= activity.date %></p>
-    <p><%= link_to 'Show', activity_path(activity) %></p>
-<% end %>
+<div class="d-md-flex flex-wrap justify-content-center">
+    <% @activities.each do |activity| %>
+        <div class="activity card text-black mr-3 w-25 mb-3">
+            <div class="img center">
+                <%= image_tag(activity.activity_name, :class => 'w-25' )  %>
+            </div>
+            <h4><%= activity.activity_name %></h4>
+            <p><%= activity.date %></p>
+            <%= link_to 'Show', activity_path(activity), :class => 'text-black' %>
+        </div>
+    <% end %>
+
+
+</div>
+
+
