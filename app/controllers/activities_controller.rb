@@ -19,7 +19,20 @@ class ActivitiesController < ApplicationController
     def new
         @activity = Activity.new
     end
+
+    def destroy
+        @activity = Activity.find(params[:id])
+        if @activity.destroy
+            #flash[:success] = 'Activity was successfully deleted.'
+            redirect_to activities_path
+        else
+            #flash[:error] = 'Something went wrong'
+            redirect_to activities_path
+        end
+    end
     
+
+
     def create
         @activity = Activity.new(activity_params)
         @activity.user = current_user
