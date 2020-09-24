@@ -9,9 +9,9 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="">
-    <div class="text-white">
-      <div class="px-3 navbar bg-color"> 
+  <body>
+    <div>
+      <div class="px-3 navbar bg-color text-white"> 
       <h1 class="inline"><%= link_to 'Move and Groove', welcome_index_path %></h1>
       <div class="items">
       <% if user_signed_in? %>
