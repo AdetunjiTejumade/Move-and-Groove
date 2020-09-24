@@ -1,24 +1,51 @@
-<div class="container">
-    <h1>My Activity </h1>
+<div class="pt-5 bg-color h-100"> 
+    <div class="center">
+        <h1>My Activity</h1>
+    </div>
+    <div class="d-md-flex justify-content-center px-3 mt-5">
+    
+    
+    <div>
+        <div class="w-30">
+                <div class="d-flex justify-content-end">
+                    <p class=""><%= link_to 'New', new_activity_path %><p>
+                </div>
 
-<p>
-    <strong>Activity:</strong>
-    <%= @activity.activity_name %>
-</p>
+                <div class="d-flex">
+                    <strong>ACTIVITY :</strong>
+                    <p class="ml-2"><%= @activity.activity_name %></p>
+                </div>
 
-<p>
-    <strong>Date:</strong>
-    <%= @activity.date %>
-</p>
+                <div class="d-flex">
+                    <strong>DATE :</strong>
+                    <p class="ml-2"><%= @activity.date %></p>
+                </div>
 
-<p>
-    <strong>Duration:</strong>
-    <%= @activity.duration %>
+                <div class="d-flex">
+                    <strong>DURATION :</strong>
+                    <p class="ml-2"><%= @activity.date %></p>
+                </div>
+
+            </div>
+    <div>
+   
+    
+    <div class="d-flex">
+        <%# change delete to an icon %>
+        <p><%= link_to 'Delete', activity_path(@activity),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %></p>
+
+        <p class="ml-3"><%= link_to 'Back', activities_path %></p>
+
+    </div>
+
+
+    </div>
+    
+
+        
 </div>
 
-</p>
 
-<p><%= link_to 'Destroy', activity_path(@activity),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></p>
-<p><%= link_to 'Back', activities_path %></p>
+
