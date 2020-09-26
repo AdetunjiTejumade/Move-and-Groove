@@ -16,7 +16,6 @@
      height: 100%;
  }
 body{
-    height: 100%;
     padding: 0px;
 }
  .text-black{
@@ -37,11 +36,17 @@ a:hover{
  .bg-color{
      background-color: #f8b233;;
  }
+ #noop{
+     display: none;
+ }
  
  // utilities
 
  .center{
      text-align: center;
+ }
+ .items{
+     display: none;
  }
  @media (min-width: 768px){
      .w-md-25{
@@ -55,8 +60,10 @@ a:hover{
      .w-md-50{
          width: 50%;
      }
+     .h-md-100{
+        height: 100%;
+     }
  }
-
 //  .header{
 //      background-image: url(running_man.png);
 //      height: 21rem;

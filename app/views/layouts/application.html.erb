@@ -9,11 +9,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="h-100">
     <div class="h-100">
       <div class="px-3 navbar bg-color text-white"> 
       <h1 class="inline"><%= link_to 'Move and Groove', welcome_index_path %></h1>
-      <div class="items">
+      <div class="items d-md-block.">
       <% if user_signed_in? %>
         <p class="d-inline"><%= current_user.email %></p>
         <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link hover-border-b' %>

@@ -1,12 +1,12 @@
-<div class="pt-5 bg-color h-100">
+<div class="pt-5 bg-color h-md-100">
     <div class="">
         <h1 class="text-center">Activities</h1>
     </div>
-    <p class="pl-3"><%= link_to 'New', new_activity_path %><p>
+    <p class="pl-3"><%= link_to 'New', new_activity_path %></p>
 
     <div class="d-md-flex flex-wrap justify-content-center px-3">
          <% @activities.each do |activity| %>
-            <div class="activity card text-black mr-md-3 w-md-25 mb-3 px-3 pb-3">
+            <div class="activity card text-black mr-md-3 w-md-25 mt-3 px-3 pb-3">
                 <div class="img center py-3">
                     <%= image_tag(activity.activity_name + '.svg', :class => 'w-25' )  %>
                 </div>
