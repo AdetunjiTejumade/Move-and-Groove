@@ -1,23 +1,42 @@
-<div class="pt-5 bg-color h-md-100">
-    <div class="">
-        <h1 class="text-center">Activities</h1>
-    </div>
-    <p class="pl-3"><%= link_to 'New', new_activity_path %></p>
+<div class="pt-5 h-100 bg-color"> 
+    <div>
+        <div class="">
+            <h1 class="text-center">Activities</h1>
+            <p class="pl-3"><%= link_to 'New', new_activity_path %></p>
+        </div>
+        
 
-    <div class="d-md-flex flex-wrap justify-content-center px-3">
-         <% @activities.each do |activity| %>
-            <div class="activity card text-black mr-md-3 w-md-25 mt-3 px-3 pb-3">
-                <div class="img center py-3">
-                    <%= image_tag(activity.activity_name + '.svg', :class => 'w-25' )  %>
+        <div class="d-md-flex flex-wrap justify-content-center px-3">
+            <% @activities.each do |activity| %>
+                <div class="activity card text-black mr-md-3 w-md-25 mt-3 px-3 pb-3">
+                    <div class="img center py-3">
+                        <%= image_tag(activity.activity_name + '.svg', :class => 'w-25' )  %>
+                    </div>
+                    <div class="">
+                        <h4><%= activity.activity_name %></h4>
+                        <p><%= activity.date %></p>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <%= link_to '>>>', activity_path(activity), :class => 'text-black' %>
+                    </div>
                 </div>
-                <div class="">
-                    <h4><%= activity.activity_name %></h4>
-                    <p><%= activity.date %></p>
-                </div>
-                <div class="d-flex justify-content-end">
-                    <%= link_to '>>>', activity_path(activity), :class => 'text-black' %>
-                </div>
-            </div>
-          <% end %>
-    </div>
+            <% end %>
+        </div>
+    </div>        
 </div>
+      <div class=" bg-color center sec-color px-3">
+        <div>
+              <%# <p>Made by @tejumade</p> %>
+            <% if user_signed_in? %>
+                <p class="d-inline"><%= current_user.email %></p>
+                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link hover-border-b' %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link hover-border-b'  %>
+            <% else %>
+                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link hover-border-b'  %>
+                <%= link_to "Login", new_user_session_path, :class => 'navbar-link hover-border-b'  %>
+            <% end %>
+        </div>
+        </div>
+
+
+

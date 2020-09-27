@@ -36,3 +36,16 @@
     </div>
   </div>
 </div>
+ <div class="footer bg-color center sec-color px-3 bottom">
+        <div>
+              <%# <p>Made by @tejumade</p> %>
+            <% if user_signed_in? %>
+                <p class="d-inline"><%= current_user.email %></p>
+                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link hover-border-b' %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link hover-border-b'  %>
+            <% else %>
+                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link hover-border-b'  %>
+                <%= link_to "Login", new_user_session_path, :class => 'navbar-link hover-border-b'  %>
+            <% end %>
+        </div>
+        </div>

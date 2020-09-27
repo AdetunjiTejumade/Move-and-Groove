@@ -20,6 +20,10 @@ class ActivitiesController < ApplicationController
         @activity = Activity.new
     end
 
+    def edit
+        @activity = Activity.find(params[:id])
+    end
+
     def destroy
         @activity = Activity.find(params[:id])
         if @activity.destroy

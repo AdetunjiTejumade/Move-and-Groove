@@ -63,6 +63,9 @@ a:hover{
      .h-md-100{
         height: 100%;
      }
+     .bottom-md{
+         bottom: 0;
+     }
 
  }
  .text-1{
@@ -115,4 +118,12 @@ a:hover{
 }
 #activity_activity_name:focus{
     border: 1px solid #f8b233;
+}
+.footer{
+    height: 4rem;
+    width: 100%;
+    position: absolute;
+}
+.bottom{
+    bottom: 0;
 }

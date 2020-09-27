@@ -1,11 +1,11 @@
-<div class="pt-5 h-100"> 
+<div class="pt-5"> 
     <%# <div class="center">
         <h1>My Activity</h1>
     </div> %>
-    <div class="d-md-flex justify-content-center px-3">
+    <div class="d-md-flex justify-content-center">
     
     
-    <div>
+    <div class=" px-3">
         <div class="w-30">
               
                 <div class="center mb-3">
@@ -35,7 +35,7 @@
         <p><%= link_to 'Delete', activity_path(@activity),
                     method: :delete,
                     data: { confirm: 'Are you sure?' } %></p>
-
+        <p><%= link_to 'Edit', edit_activity_path(@activity) %></p>
         <p class="ml-3"><%= link_to 'Back', activities_path %></p>
 
     </div>
@@ -43,9 +43,21 @@
 
     </div>
     
-
-        
+     
 </div>
 
 
-
+ <div class="footer bg-color center sec-color px-3 bottom">
+        <div>
+              <%# <p>Made by @tejumade</p> %>
+            <% if user_signed_in? %>
+                <p class="d-inline"><%= current_user.email %></p>
+                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link hover-border-b' %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link hover-border-b'  %>
+            <% else %>
+                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link hover-border-b'  %>
+                <%= link_to "Login", new_user_session_path, :class => 'navbar-link hover-border-b'  %>
+            <% end %>
+        </div>
+        </div>
+        
