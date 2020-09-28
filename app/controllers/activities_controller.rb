@@ -47,7 +47,18 @@ class ActivitiesController < ApplicationController
            render 'new'
         end
     end
+    def update
+        @activity = Activity.find(params[:id])
 
+        if @activity.update(activity_params)
+          flash[:success] = "Object was successfully updated"
+          redirect_to @activity
+        else
+          flash[:error] = "Something went wrong"
+          render 'edit'
+        end
+    end
+    
     private 
         def activity_params
             params.require(:activity).permit(:activity_name, :date, :duration)

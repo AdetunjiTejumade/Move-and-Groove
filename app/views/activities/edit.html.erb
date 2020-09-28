@@ -3,7 +3,7 @@
   
   <h1>Edit</h1>
 
-  <%= form_with scope: :activity, url: activities_path, local: true do |form| %>
+  <%= form_with(model: @activity,local: true) do |form| %>
 
   <% if @activity.errors.any? %>
       <div id="error_explanation">
