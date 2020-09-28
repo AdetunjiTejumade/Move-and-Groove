@@ -15,7 +15,8 @@
 
       <div class="px-3 navbar bg-color text-white"> 
           <h1 class="inline text-1"><%= link_to 'Move and Groove', welcome_index_path %></h1>
-          <div class="items d-md-block">
+          <a href="javascript:void(0);" class="menu" id="toggle" onclick="toggle()">+<i class="fa fa-bars"></i></a>
+          <div id="items" class="items">
               <% if user_signed_in? %>
                 <p class="d-inline"><%= current_user.email %></p>
                 <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link hover-border-b' %>
@@ -25,6 +26,7 @@
                 <%= link_to "Login", new_user_session_path, :class => 'navbar-link hover-border-b'  %>
               <% end %>
           </div>
+          
       </div>
 
       <div>
@@ -33,4 +35,14 @@
 
     </div>
   </body>
+      <script type="text/javascript">
+    const nav = document.getElementById('items')
+    function toggle() {
+        if( nav.className == 'items'){
+            nav.className += ' show'
+        } else{
+            nav.className = 'items'
+        }
+}
+    </script>
 </html>

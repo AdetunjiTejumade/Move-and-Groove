@@ -45,9 +45,7 @@ a:hover{
  .center{
      text-align: center;
  }
- .items{
-     display: none;
- }
+
  @media (min-width: 768px){
      .w-md-25{
          width: 25%;
@@ -66,7 +64,9 @@ a:hover{
      .bottom-md{
          bottom: 0;
      }
-
+     .menu{
+         display: none;
+     }
  }
 
  .text-1{
@@ -136,6 +136,12 @@ a:hover{
             padding-right: 1rem ; 
             padding-left: 1rem ;
         }
+        .navbar{
+            position: relative;
+        }
+        .items * {
+            display: block;
+        }
 }
 .header{
     background-image: url(header.jpg);
@@ -144,4 +150,10 @@ a:hover{
     background-repeat: no-repeat;
     width: 100%;
     flex-flow: column;
+}
+.items{
+    display: none;
+}
+.show{
+    display: block;
 }
