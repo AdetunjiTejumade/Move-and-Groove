@@ -1,5 +1,41 @@
-<div class="px-3">
-    <div class="header">
-        <h1>Take the leap of faith today</h1>
+<div class="">
+    <div class="header px-3  d-flex justify-content-center align-items-center text-white ">
+        
+            <h1>Take the leap of faith today</h1>
+        
+        <div class="buttons">
+            <% if user_signed_in? %>
+                <button class="btn sign-up-btn text-white px-4 py-3">  <%= link_to "Your Activities", activities_path %></button>
+            <% else %>
+                <button class="btn sign-up-btn text-white px-4">  <%= link_to "Sign up", new_user_registration_path %></button>
+                <button class="btn sign-up-btn text-white px-4">  <%= link_to "Login", new_user_session_path %></button>
+            <% end %>
+        </div>
     </div>
+    <div class="bg-color center sec-color px-sm-3 bottom py-2">
+        <div class="mb-2">
+              <%# <p>Made by @tejumade</p> %>
+            <% if user_signed_in? %>
+                <p class="d-inline"><%= current_user.email %></p>
+                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link hover-border-b' %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link hover-border-b'  %>
+            <% else %>
+                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link hover-border-b'  %>
+                <%= link_to "Login", new_user_session_path, :class => 'navbar-link hover-border-b'  %>
+            <% end %>
+
+        </div>
+        <p> Made with ♡ by tejumade</p>
+        </div>
+    <%# links %>
+   
+    <%# main %>
+    <%# <div class="center">
+        <h3>Take the leap of faith today</h3>
+        <div class="mt-5">
+        <h3>Track Your Activities</h3>
+        <p>Move and groove allows you to record your activities</p>
+        </div>
+    </div> %>
+
 </div>

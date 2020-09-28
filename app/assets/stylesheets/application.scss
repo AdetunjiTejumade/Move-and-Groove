@@ -128,8 +128,20 @@ a:hover{
 .bottom{
     bottom: 0;
 }
-// @media (max-width: 768px){
-//     .bottom-sm{
-//         bottom: 0;
-//     }
-// }
+ @media (max-width: 768px){
+        .header{
+            background-position: center;
+        }
+        .px-sm-3{
+            padding-right: 1rem ; 
+            padding-left: 1rem ;
+        }
+}
+.header{
+    background-image: url(header.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    flex-flow: column;
+}
