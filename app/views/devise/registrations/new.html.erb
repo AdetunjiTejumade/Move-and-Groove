@@ -30,9 +30,13 @@
           <div class="mt-3">
               <%= f.submit "Create Account", :class => 'btn sign-up-btn text-white' %>
           </div>
+
+          <div class="mt-3">
+              <%= render "devise/shared/links" %> 
+          </div>
       </div>
 <% end %>
-<%= render "devise/shared/links" %>
+   
     </div>
   </div>
 </div>
