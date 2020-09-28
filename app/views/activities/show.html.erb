@@ -35,7 +35,7 @@
         <p><%= link_to 'Delete', activity_path(@activity),
                     method: :delete,
                     data: { confirm: 'Are you sure?' } %></p>
-        <p><%= link_to 'Edit', edit_activity_path(@activity) %></p>
+        <p class="ml-3"><%= link_to 'Edit', edit_activity_path(@activity) %></p>
         <p class="ml-3"><%= link_to 'Back', activities_path %></p>
 
     </div>
@@ -47,7 +47,7 @@
 </div>
 
 
- <div class="footer bg-color center sec-color px-3 bottom">
+ <div class="footer bg-color center sec-color px-sm-3 bottom py-3">
         <div>
               <%# <p>Made by @tejumade</p> %>
             <% if user_signed_in? %>

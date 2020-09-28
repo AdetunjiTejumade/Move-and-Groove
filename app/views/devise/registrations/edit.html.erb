@@ -42,7 +42,7 @@
 
       <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
       <div class="px-3 mt-3">
-           <%= link_to "Back", :back, %>
+       <%= link_to "Back", :back %>
       </div>
 </div>
 </div>
@@ -58,4 +58,5 @@
                 <%= link_to "Login", new_user_session_path, :class => 'navbar-link hover-border-b'  %>
             <% end %>
         </div>
+        <p> Made with ♡ by tejumade</p>
         </div>
