@@ -8,35 +8,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
 
   <body class="h-100">
     <div class="h-100">
 
-      <div class="px-3 navbar bg-color text-white"> 
-          <h1 class="inline text-1"><%= link_to 'Move and Groove', welcome_index_path %></h1>
-          <a href="javascript:void(0);" class="menu" id="toggle" onclick="toggle()">+<i class="fa fa-bars"></i></a>
-          <div id="items" class="items">
-              <% if user_signed_in? %>
-                <p class="d-inline"><%= current_user.email %></p>
-                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link hover-border-b' %>
-                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link hover-border-b'  %>
-              <% else %>
-                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link hover-border-b'  %>
-                <%= link_to "Login", new_user_session_path, :class => 'navbar-link hover-border-b'  %>
-              <% end %>
+      <nav class="navbar navbar-expand-lg justify-content-between bg-color px-3 navbar-light"> 
+      
+        <a class="navbar-brand text-white" href="">Move and Groove</a>
+      
+          <div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <% if user_signed_in? %>
+                  <p class="nav-item nav-link text-white"><%= current_user.email %></p>
+                  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-item nav-link text-white' %>
+                  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'nav-item nav-link text-white'  %>
+                <% else %>                  
+                  <%= link_to "Sign up", new_user_registration_path, :class => 'nav-item nav-link text-white'  %>
+                  <%= link_to "Login", new_user_session_path, :class => 'nav-item nav-link text-white'  %>
+                <% end %>
+
+              </ul>
           </div>
-          
-      </div>
+          </div>
 
-      
+      </nav>    
           <%= yield %>
-      
-
     </div>
   </body>
       <script type="text/javascript">
-    let nav = document.getElementById('items')
+    var nav = document.getElementById('items')
     function toggle() {
         if( nav.className == 'items'){
             nav.className += ' show'

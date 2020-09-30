@@ -142,7 +142,7 @@ a:hover{
         .items{
             display: none;
         }
-        .items * {
+        .items > * {
             display: block;
         }
 }
@@ -156,5 +156,5 @@ a:hover{
 }
 
 .show{
-    display: block;
+    display: inherit;
 }
