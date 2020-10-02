@@ -9,19 +9,25 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   </head>
 
   <body class="h-100">
     <div class="h-100">
 
-      <nav class="navbar navbar-expand-lg justify-content-between bg-color px-3 navbar-light"> 
+  <nav class="navbar navbar-expand-lg justify-content-between bg-color px-3 navbar-light"> 
       
         <a class="navbar-brand text-white" href="">Move and Groove</a>
-      
-          <div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+        </button>
+          <div  class="w-md-100">
+          
           <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <% if user_signed_in? %>
@@ -37,18 +43,8 @@
           </div>
           </div>
 
-      </nav>    
-          <%= yield %>
+      </nav> 
+       <%= yield %>
     </div>
-  </body>
-      <script type="text/javascript">
-    var nav = document.getElementById('items')
-    function toggle() {
-        if( nav.className == 'items'){
-            nav.className += ' show'
-        } else{
-            nav.className = 'items'
-        }
-}
-    </script>
+  </body>     
 </html>

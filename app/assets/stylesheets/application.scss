@@ -58,6 +58,7 @@ a:hover{
      .w-md-50{
          width: 50%;
      }
+     
      .h-md-100{
         height: 100%;
      }
@@ -67,7 +68,9 @@ a:hover{
      .menu{
          display: none;
      }
+
  }
+
 
  .text-1{
     font-size: 1rem;
@@ -145,6 +148,10 @@ a:hover{
         .items > * {
             display: block;
         }
+        .w-md-100{
+            width: 100%;
+        }
+
 }
 .header{
     background-image: url(/assets/header.jpg);
